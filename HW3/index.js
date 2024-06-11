@@ -29,9 +29,10 @@ const roles = [
 const result1 = names.map(name => {
     const roleObj = roles.find(role => role.userid === name.userid);
     return {
-      ...name,
+      userid: name.userid,
+      name: name.name,
       role: roleObj ? roleObj.role : null
-    };
+  };
   });
   
   console.log(result1);

@@ -81,7 +81,7 @@ console.log(beasts.indexOf('giraffe'));
 //reduce test
 Array.prototype.myReduce = function(arr, initial){
     const initialVal= initial == undefined?0 : initial;
-    let total =initial;
+    let total =initialVal;
     for(let i = 0;i<this.length;i++){
         total = arr(total, this[i], i, this);
     }
