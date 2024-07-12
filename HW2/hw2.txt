@@ -1,0 +1,73 @@
+1)Why are closures useful in JavaScript? Give an example use case.
+Closures are useful in JavaScript because they allow functions to access variables from an enclosing scope even after that scope has finished execution. This enables several powerful programming techniques such as data privacy, function factories, and maintaining state between function calls.
+function createCounter() {
+  let count = 0; // Private variable
+
+  return {
+    increment: function() {
+      count++;
+      return count;
+    },
+    decrement: function() {
+      count--;
+      return count;
+    },
+    getCount: function() {
+      return count;
+    }
+  };
+}
+
+const counter = createCounter();
+console.log(counter.increment()); // 1
+console.log(counter.increment()); // 2
+console.log(counter.getCount());  // 2
+console.log(counter.decrement()); // 1
+
+
+2)When should you choose to use “let” or “const”
+let: Use let when you need a variable whose value may change throughout the program. It is block-scoped, meaning it is only accessible within the block it was defined in.
+const: Use const when you need a variable whose value should not change once it is assigned. It is also block-scoped. Note that objects and arrays declared with const can still have their properties or elements modified.
+
+let count = 0;
+count += 1; 
+
+// Using const
+const maxCount = 10;
+// maxCount = 20; 
+
+const user = { name: 'Alice' };
+user.name = 'Bob'; 
+
+
+3)Give an example of a common mistake related to hoisting and explain how to fix it.
+A common mistake is trying to access a variable declared with let or const before it is declared, leading to a ReferenceError. Variables declared with var are hoisted and initialized with undefined, while let and const are hoisted but not initialized.
+// Error
+console.log(x); // undefined (due to var hoisting)
+var x = 10;
+
+console.log(y); // ReferenceError: Cannot access 'y' before initialization
+let y = 20;
+
+console.log(z); // ReferenceError: Cannot access 'z' before initialization
+const z = 30;
+
+//fix
+var x;
+console.log(x); // undefined
+x = 10;
+
+let y;
+console.log(y); // undefined
+y = 20;
+
+const z = 30;
+console.log(z); // 30
+
+
+4)What will the outcome of each console.log() be after the function calls? Why?
+
+foo1:[1, 2, 3]
+foo2:[1, 2, 3]
+foo3:[1, 2, 3, 3]
+foo4:[1, 2, 3, 3]
