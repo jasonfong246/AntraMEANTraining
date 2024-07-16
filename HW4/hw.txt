@@ -1,0 +1,16 @@
+1)Instance methods belong to an instance of a class. They can access and modify the data of the instance.
+Static methods belong to the class itself rather than any particular instance. They cannot access instance variables or instance methods directly
+
+2)JavaScript handles concurrency using a single-threaded event loop. It can perform one task at a time but doesn't wait for long operations like
+data fetching. Instead, it continues running other code. When these long operations finish, they add their callback functions to an event queue. 
+The event loop then checks this queue and runs the callbacks when the main code execution is done.
+
+3)Async/await is a simpler way to write promises in JavaScript, making async code look more like regular, step-by-step code. An async function, 
+marked by async, always returns a promise. The await keyword, used inside these functions, pauses the function until the promise is finished, 
+making the code easier to read.
+
+4)No, you cannot use await outside of an async function. If you try, it will result in a syntax error. await can only be used within an async
+function to ensure that the function returns a promise and can be properly awaited.
+
+5)Callback hell refers to a situation where multiple nested callbacks are used to handle asynchronous operations. This often results in code
+that is difficult to read and maintain because of its deeply nested structure, also known as "pyramid of doom".
