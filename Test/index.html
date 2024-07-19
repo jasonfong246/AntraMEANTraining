@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Reddit Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Simple Reddit Clone</h1>
+    </header>
+    <main>
+        <section id="post-form">
+            <h2>Submit a Post</h2>
+            <form id="submit-post-form">
+                <label for="subreddit">Subreddit:</label>
+                <input type="text" id="subreddit" name="subreddit" required>
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="posts">
+            <h2>Posts</h2>
+            <div id="posts-container"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
